@@ -11,8 +11,8 @@ var performRequest = function(path, method, params, _cb) {
   var dataString = JSON.stringify(params);
   var headers = {};
 
-  if (method === 'GET') {
-    endpoint += '?' + querystring.stringify(data);
+  if (method === 'GET' && params) {
+    path += '?' + querystring.stringify(params);
   }
   else {
     headers = {
@@ -62,6 +62,7 @@ var performRequest = function(path, method, params, _cb) {
 
 restUtils.get = function(path, params, _cb) {
   console.log("Making get call to url "+path);
+  performRequest(path,'GET', params, _cb);
 };
 
 

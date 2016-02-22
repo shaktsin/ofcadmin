@@ -9,6 +9,7 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var login = require('./routes/login');
+var categories = require('./routes/categories');
 
 var app = express();
 
@@ -29,6 +30,7 @@ app.use(session({resave: true, saveUninitialized: true, secret: '1234567890QWERT
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/categories', categories);
 app.use('/auth', login);
 
 // catch 404 and forward to error handler

@@ -5,7 +5,7 @@
 var config = {
 
   SERVER_HOST: 'localhost',
-  SERVER_PORT: 4521
+  SERVER_PORT: 4525
 
 };
 
